@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "InformeBateriaPc", "InformeBateriaPc.vbproj", "{26FED4AD-0457-472B-B172-104494973E01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Any CPU|Any CPU = Any CPU|Any CPU
+		Any CPU|ARM32 = Any CPU|ARM32
+		Any CPU|Mixed Platforms = Any CPU|Mixed Platforms
+		Any CPU|x64 = Any CPU|x64
+		Any CPU|x86 = Any CPU|x86
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM32 = Debug|ARM32
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM32 = Release|ARM32
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+		x64|Any CPU = x64|Any CPU
+		x64|ARM32 = x64|ARM32
+		x64|Mixed Platforms = x64|Mixed Platforms
+		x64|x64 = x64|x64
+		x64|x86 = x64|x86
+		x86|Any CPU = x86|Any CPU
+		x86|ARM32 = x86|ARM32
+		x86|Mixed Platforms = x86|Mixed Platforms
+		x86|x64 = x86|x64
+		x86|x86 = x86|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26FED4AD-0457-472B-B172-104494973E01}.Any CPU|Any CPU.ActiveCfg = Release|x64
+		{26FED4AD-0457-472B-B172-104494973E01}.Any CPU|Any CPU.Build.0 = Release|x64
+		{26FED4AD-0457-472B-B172-104494973E01}.Any CPU|ARM32.ActiveCfg = Any CPU|ARM32
+		{26FED4AD-0457-472B-B172-104494973E01}.Any CPU|ARM32.Build.0 = Any CPU|ARM32
+		{26FED4AD-0457-472B-B172-104494973E01}.Any CPU|Mixed Platforms.ActiveCfg = Release|x64
+		{26FED4AD-0457-472B-B172-104494973E01}.Any CPU|Mixed Platforms.Build.0 = Release|x64
+		{26FED4AD-0457-472B-B172-104494973E01}.Any CPU|x64.ActiveCfg = Any CPU|x64
+		{26FED4AD-0457-472B-B172-104494973E01}.Any CPU|x64.Build.0 = Any CPU|x64
+		{26FED4AD-0457-472B-B172-104494973E01}.Any CPU|x86.ActiveCfg = Any CPU|x86
+		{26FED4AD-0457-472B-B172-104494973E01}.Any CPU|x86.Build.0 = Any CPU|x86
+		{26FED4AD-0457-472B-B172-104494973E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.Debug|ARM32.ActiveCfg = Debug|ARM32
+		{26FED4AD-0457-472B-B172-104494973E01}.Debug|ARM32.Build.0 = Debug|ARM32
+		{26FED4AD-0457-472B-B172-104494973E01}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.Debug|x64.ActiveCfg = Debug|x64
+		{26FED4AD-0457-472B-B172-104494973E01}.Debug|x64.Build.0 = Debug|x64
+		{26FED4AD-0457-472B-B172-104494973E01}.Debug|x86.ActiveCfg = Debug|x86
+		{26FED4AD-0457-472B-B172-104494973E01}.Debug|x86.Build.0 = Debug|x86
+		{26FED4AD-0457-472B-B172-104494973E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.Release|ARM32.ActiveCfg = Release|ARM32
+		{26FED4AD-0457-472B-B172-104494973E01}.Release|ARM32.Build.0 = Release|ARM32
+		{26FED4AD-0457-472B-B172-104494973E01}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.Release|x64.ActiveCfg = Any CPU|x64
+		{26FED4AD-0457-472B-B172-104494973E01}.Release|x64.Build.0 = Any CPU|x64
+		{26FED4AD-0457-472B-B172-104494973E01}.Release|x86.ActiveCfg = Release|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.Release|x86.Build.0 = Release|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.x64|Any CPU.ActiveCfg = x64|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.x64|Any CPU.Build.0 = x64|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.x64|ARM32.ActiveCfg = x64|ARM32
+		{26FED4AD-0457-472B-B172-104494973E01}.x64|ARM32.Build.0 = x64|ARM32
+		{26FED4AD-0457-472B-B172-104494973E01}.x64|Mixed Platforms.ActiveCfg = x64|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.x64|Mixed Platforms.Build.0 = x64|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.x64|x64.ActiveCfg = x64|x64
+		{26FED4AD-0457-472B-B172-104494973E01}.x64|x64.Build.0 = x64|x64
+		{26FED4AD-0457-472B-B172-104494973E01}.x64|x86.ActiveCfg = x64|x86
+		{26FED4AD-0457-472B-B172-104494973E01}.x64|x86.Build.0 = x64|x86
+		{26FED4AD-0457-472B-B172-104494973E01}.x86|Any CPU.ActiveCfg = Any CPU|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.x86|Any CPU.Build.0 = Any CPU|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.x86|ARM32.ActiveCfg = Debug|ARM32
+		{26FED4AD-0457-472B-B172-104494973E01}.x86|ARM32.Build.0 = Debug|ARM32
+		{26FED4AD-0457-472B-B172-104494973E01}.x86|Mixed Platforms.ActiveCfg = Any CPU|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.x86|Mixed Platforms.Build.0 = Any CPU|Any CPU
+		{26FED4AD-0457-472B-B172-104494973E01}.x86|x64.ActiveCfg = Any CPU|x64
+		{26FED4AD-0457-472B-B172-104494973E01}.x86|x64.Build.0 = Any CPU|x64
+		{26FED4AD-0457-472B-B172-104494973E01}.x86|x86.ActiveCfg = Release|x86
+		{26FED4AD-0457-472B-B172-104494973E01}.x86|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {444658DF-D47E-4972-BBCD-DAF7AA0E14B1}
+	EndGlobalSection
+EndGlobal
