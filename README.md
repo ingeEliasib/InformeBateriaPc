@@ -11,6 +11,7 @@
 
 📥 Descargar
 🔗 Descargar Instalador (.exe)
+https://drive.google.com/file/d/1-OE3nKHM08KVjeCZD3srsDjuQSsTzOj2/view?usp=drive_link
 
 🛠️ Instrucciones de Uso
 Instalar el programa con el setup proporcionado.
