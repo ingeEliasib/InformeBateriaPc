@@ -3,6 +3,8 @@
     Private PorcentajeFullBateria As Integer = 0
     Private WithEvents timer As New Timer()
     Private primerConsulta As Boolean = True
+
+
     'Private WithEvents NotifyIcon1 As New NotifyIcon()
     Private Sub Fr_principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -26,7 +28,9 @@
 
         If primerConsulta Then
             consultar_informacion()
-            MsgBox($"Información actualizada correctamente, Nivel de Batería {PorcentajeFullBateria} % ,Estado de Cargador {estadoCargador}", MsgBoxStyle.Information, "Información")
+            'MsgBox($"Información actualizada correctamente, Nivel de Batería {PorcentajeFullBateria} % ,Estado de Cargador {estadoCargador}", MsgBoxStyle.Information, "Información")
+            Dim alerta As New Form_Alerta
+            alerta.MostrarMensaje($"Información actualizada correctamente, Nivel de Batería {PorcentajeFullBateria} % ,Estado de Cargador {estadoCargador}")
             primerConsulta = False
         End If
     End Sub
@@ -51,13 +55,20 @@
 
         If revisarestadoCargador() = "Conectado" Then
             If PorcentajeFullBateria >= 90 Then
+
                 System.Media.SystemSounds.Exclamation.Play() ' 🔊 Reproduce un sonido de alerta
-                MsgBox("La batería está completamente cargada", MsgBoxStyle.Information Or MsgBoxStyle.SystemModal, "Información")
+                'MsgBox("La batería está completamente cargada", MsgBoxStyle.Information Or MsgBoxStyle.SystemModal, "Información")
+                Dim alerta As New Form_Alerta
+                alerta.MostrarMensaje("La batería está cargada sobre el noventa porciento puede desconectar el pc")
+
             End If
         Else
-            If PorcentajeFullBateria <= 10 Then
+            If PorcentajeFullBateria <= 20 Then
                 System.Media.SystemSounds.Exclamation.Play() ' 🔊 Reproduce un sonido antes del mensaje
-                MsgBox("Debe iniciar el proceso de Carga del Computador", MsgBoxStyle.Information Or MsgBoxStyle.SystemModal, "Información")
+                ' MsgBox("Debe iniciar el proceso de Carga del Computador", MsgBoxStyle.Information Or MsgBoxStyle.SystemModal, "Información")
+                Dim alerta As New Form_Alerta
+                alerta.MostrarMensaje("Debe iniciar el proceso de Carga del Computador")
+
             End If
         End If
     End Sub
@@ -65,7 +76,8 @@
 
     Private Sub Btn_Salir_Click(sender As Object, e As EventArgs) Handles Btn_Salir.Click
         Dim respuesta As DialogResult
-        respuesta = MessageBox.Show("¿Está seguro de que desea salir de la aplicación?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        respuesta = MessageBox.Show("¿Está seguro de que desea salir de la aplicación?, si lo que desea es ocultar esta ventana seleccione " &
+            "el boton no y el programa quedara oculto trabajando en segundo plano", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If respuesta = DialogResult.Yes Then
             Me.Close()
         Else
@@ -132,10 +144,7 @@
 
         Dim ventanaayuda As New Fr_Ayuda
         ventanaayuda.ShowDialog()
-        'MsgBox("Este programa monitorea el estado de la batería de su computadora y le notifica cuando está completamente cargada o necesita ser recargada." & vbCrLf & vbCrLf &
-        '       "También le informa si el cargador está conectado o desconectado." & vbCrLf & vbCrLf &
-        '       "Desarrollado por: Ing. Eliasib Cadena Méndez" & vbCrLf &
-        '       "Contacto: ingenieroeliasibcadena@gmail.com", MsgBoxStyle.Information, "Ayuda")
+
     End Sub
 
 End Class
