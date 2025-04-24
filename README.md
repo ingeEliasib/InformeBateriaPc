@@ -24,7 +24,9 @@ El programa te notificará cuando la batería esté cargada o necesite carga.
 Este software es de uso gratuito y fue desarrollado para ayudar a la comunidad con discapacidad visual. No puede ser vendido ni modificado sin autorización.
 🔐 Hash SHA256 del Instalador:
 2D9653D23D35E4325F8C1FAFC36E5F79AD65043B370226C982DA87D3FB35EB1B
-
+ver 1.5.1
+D129B1726D646C3480133E59020E9D5397FFE8F1ABE9DAA233F23F44A74053DD       
+se firma con signtool se puede escanear con antivirus no necesita internet o permisos para funcionar
 📧 Contacto
 👤 Desarrollado por: Ingeniero Eliasib Cadena Méndez
 ✉️ Correo: ingenieroeliasibcadena@gmail.com
