@@ -1,18 +1,19 @@
-﻿Public Class Fr_principal
+﻿Imports Microsoft.VisualBasic.ApplicationServices
+
+Public Class Fr_principal
     Private estadoCargador As String
     Private PorcentajeFullBateria As Integer = 0
     Private WithEvents timer As New Timer()
     Private primerConsulta As Boolean = True
+    Public Event StartupNextInstance(sender As Object, e As StartupNextInstanceEventArgs)
 
-
-    'Private WithEvents NotifyIcon1 As New NotifyIcon()
     Private Sub Fr_principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Configurar NotifyIcon
         NotifyIcon1.Icon = Me.Icon ' Usa el icono del formulario o uno personalizado
         NotifyIcon1.Visible = False
         NotifyIcon1.Text = "Monitor de Batería"
-        AddHandler NotifyIcon1.DoubleClick, AddressOf RestaurarVentana
+
 
         ' Mantener siempre encima
         Me.TopMost = True
@@ -28,9 +29,8 @@
 
         If primerConsulta Then
             consultar_informacion()
-            'MsgBox($"Información actualizada correctamente, Nivel de Batería {PorcentajeFullBateria} % ,Estado de Cargador {estadoCargador}", MsgBoxStyle.Information, "Información")
             Dim alerta As New Form_Alerta
-            alerta.MostrarMensaje($"Información actualizada correctamente, Nivel de Batería {PorcentajeFullBateria} % ,Estado de Cargador {estadoCargador}")
+            alerta.MostrarMensaje($"Nivel de Batería {PorcentajeFullBateria} % , Cargador {estadoCargador}")
             primerConsulta = False
         End If
     End Sub
@@ -56,8 +56,7 @@
         If revisarestadoCargador() = "Conectado" Then
             If PorcentajeFullBateria >= 90 Then
 
-                System.Media.SystemSounds.Exclamation.Play() ' 🔊 Reproduce un sonido de alerta
-                'MsgBox("La batería está completamente cargada", MsgBoxStyle.Information Or MsgBoxStyle.SystemModal, "Información")
+                System.Media.SystemSounds.Exclamation.Play() ' 🔊 Reproduce un sonido de alerta 'MsgBox("La batería está completamente cargada", MsgBoxStyle.Information Or MsgBoxStyle.SystemModal, "Información")
                 Dim alerta As New Form_Alerta
                 alerta.MostrarMensaje("La batería está cargada sobre el noventa porciento puede desconectar el pc")
 
@@ -65,9 +64,8 @@
         Else
             If PorcentajeFullBateria <= 20 Then
                 System.Media.SystemSounds.Exclamation.Play() ' 🔊 Reproduce un sonido antes del mensaje
-                ' MsgBox("Debe iniciar el proceso de Carga del Computador", MsgBoxStyle.Information Or MsgBoxStyle.SystemModal, "Información")
                 Dim alerta As New Form_Alerta
-                alerta.MostrarMensaje("Debe iniciar el proceso de Carga del Computador")
+                alerta.MostrarMensaje("Conecte el Cargador")
 
             End If
         End If
@@ -76,8 +74,9 @@
 
     Private Sub Btn_Salir_Click(sender As Object, e As EventArgs) Handles Btn_Salir.Click
         Dim respuesta As DialogResult
-        respuesta = MessageBox.Show("¿Está seguro de que desea salir de la aplicación?, si lo que desea es ocultar esta ventana seleccione " &
-            "el boton no y el programa quedara oculto trabajando en segundo plano", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        respuesta = MessageBox.Show("¿Deseas cerrar el programa completamente?" & vbCrLf &
+                            "Presiona NO para ocultarlo en el área de notificación.",
+                            "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If respuesta = DialogResult.Yes Then
             Me.Close()
         Else
@@ -101,10 +100,10 @@
         PorcentajeFullBateria = SystemInformation.PowerStatus.BatteryLifePercent * 100
         estadoCargador = revisarestadoCargador()
 
-        Txb_DescripcionEstadoBateria.Text = $"Estado Actual de la Batería: {PorcentajeFullBateria} % {vbCrLf}" &
-                                   $". Estado Actual del Cargador: {estadoCargador} {vbCrLf}" &
-                                   $". Última Actualización: {DateTime.Now.ToString("dd 'de' MMMM '. hora: ' h:mm tt", New Globalization.CultureInfo("es-ES"))} {vbCrLf}" &
-                                   ". Diseñado por: Ingeniero Eliasib Cadena M."
+        Txb_DescripcionEstadoBateria.Text = $"Estado Batería: {PorcentajeFullBateria} % {vbCrLf}" &
+                                   $". Estado Cargador: {estadoCargador} {vbCrLf}" &
+                                   $". Última Actualización: {DateTime.Now.ToString("'. hora: ' h:mm tt", New Globalization.CultureInfo("es-ES"))}"
+
         Me.Txb_DescripcionEstadoBateria.Focus()
 
     End Sub
@@ -119,13 +118,6 @@
         End If
     End Sub
 
-    ' Método para restaurar la ventana al hacer doble clic en el icono
-    Private Sub RestaurarVentana(sender As Object, e As EventArgs)
-        Me.Show()
-        Me.WindowState = FormWindowState.Normal
-        Me.ShowInTaskbar = True
-        NotifyIcon1.Visible = False
-    End Sub
 
     Private Sub Btn_Ayuda_Click(sender As Object, e As EventArgs) Handles Btn_Ayuda.Click
         Ayuda()
@@ -137,6 +129,7 @@
                 Ayuda()
             Case Keys.F5
                 consultar_informacion()
+
         End Select
     End Sub
 
@@ -146,5 +139,25 @@
         ventanaayuda.ShowDialog()
 
     End Sub
+    Private Sub NotifyIcon1_MouseClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseClick
+        If e.Button = MouseButtons.Left Then
+            Me.Show()
+            Me.WindowState = FormWindowState.Normal
+            Me.ShowInTaskbar = True
+            NotifyIcon1.Visible = False
+            Me.BringToFront()
+        End If
+    End Sub
+    Private Sub MyApplication_StartupNextInstance(sender As Object, e As Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs) Handles Me.StartupNextInstance
+        If Application.OpenForms.Count > 0 Then
+            Dim frm = Application.OpenForms(0)
+            If frm.WindowState = FormWindowState.Minimized Then
+                frm.WindowState = FormWindowState.Normal
+            End If
+            frm.Activate()
+        End If
+    End Sub
+
+
 
 End Class

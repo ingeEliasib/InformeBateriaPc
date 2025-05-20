@@ -3,12 +3,12 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <ApplicationIcon>bateria.ico</ApplicationIcon>
     <Platforms>AnyCPU;x64;ARM32;x86</Platforms>
     <Configurations>Debug;Release;Any CPU;x64</Configurations>
+    <StartupObject>InformeBateriaPc.My.MyApplication</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

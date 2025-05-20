@@ -3,7 +3,7 @@
     Private WithEvents TimerAutoCerrar As New Timer()
 
     Public Sub MostrarMensaje(mensaje As String)
-        Btn_informacion.Text = mensaje
+        Txb_EstadoBateria.Text = mensaje
         TimerAutoCerrar.Interval = 1000 ' 1 segundo
         TimerAutoCerrar.Start()
         Me.ShowDialog()
@@ -18,7 +18,9 @@
     End Sub
 
     Private Sub Btn_Aceptar_Click(sender As Object, e As EventArgs) Handles Btn_Aceptar.Click
-        TimerAutoCerrar.Stop()
-        Me.Close()
+        TimerAutoCerrar.Stop
+        Close
     End Sub
+
+
 End Class

@@ -47,7 +47,7 @@ Partial Class Fr_principal
         ' 
         ' Btn_Ayuda
         ' 
-        Btn_Ayuda.AccessibleDescription = "Información de Ayuda"
+        Btn_Ayuda.AccessibleDescription = ""
         Btn_Ayuda.AccessibleName = "Boton Ayuda"
         Btn_Ayuda.Location = New Point(165, 5)
         Btn_Ayuda.Name = "Btn_Ayuda"
@@ -58,8 +58,8 @@ Partial Class Fr_principal
         ' 
         ' Txb_DescripcionEstadoBateria
         ' 
-        Txb_DescripcionEstadoBateria.AccessibleDescription = "Muestra el porcentaje de batería, estado del cargador y última actualización."
-        Txb_DescripcionEstadoBateria.AccessibleName = "Información de la batería"
+        Txb_DescripcionEstadoBateria.AccessibleDescription = ""
+        Txb_DescripcionEstadoBateria.AccessibleName = ""
         Txb_DescripcionEstadoBateria.BackColor = Color.White
         Txb_DescripcionEstadoBateria.BorderStyle = BorderStyle.None
         Txb_DescripcionEstadoBateria.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
@@ -73,8 +73,8 @@ Partial Class Fr_principal
         ' 
         ' Btn_Salir
         ' 
-        Btn_Salir.AccessibleDescription = "Presione este botón para cerrar la aplicación o minimizarla si decide no salir"
-        Btn_Salir.AccessibleName = "Salir de la aplicación"
+        Btn_Salir.AccessibleDescription = ""
+        Btn_Salir.AccessibleName = "Salir "
         Btn_Salir.BackColor = Color.FromArgb(CByte(255), CByte(128), CByte(128))
         Btn_Salir.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Btn_Salir.ForeColor = Color.White
@@ -87,7 +87,7 @@ Partial Class Fr_principal
         ' 
         ' Btn_ActualizarInformacion
         ' 
-        Btn_ActualizarInformacion.AccessibleDescription = "Presione este botón para actualizar el estado de la batería y el cargador"
+        Btn_ActualizarInformacion.AccessibleDescription = ""
         Btn_ActualizarInformacion.AccessibleName = "Actualizar información"
         Btn_ActualizarInformacion.BackColor = Color.FromArgb(CByte(128), CByte(255), CByte(128))
         Btn_ActualizarInformacion.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
@@ -117,8 +117,8 @@ Partial Class Fr_principal
         ' Fr_principal
         ' 
         AcceptButton = Btn_ActualizarInformacion
-        AccessibleDescription = "Aplicación que muestra el estado de la batería y el cargador"
-        AccessibleName = "Control de carga y batería"
+        AccessibleDescription = ""
+        AccessibleName = "Ventanta Principal  Batería"
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
