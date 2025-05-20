@@ -12,7 +12,8 @@
 📥 Descargar
 🔗 Descargar Instalador (.exe)
 https://drive.google.com/file/d/1-OE3nKHM08KVjeCZD3srsDjuQSsTzOj2/view?usp=drive_link
-
+Versiones 2
+https://drive.google.com/drive/folders/1a7f4dGal8SOSFFaVkf0rdfQeMny-gRdz?usp=sharing
 🛠️ Instrucciones de Uso
 Instalar el programa con el setup proporcionado.
 Ejecutarlo y dejarlo correr en segundo plano.
